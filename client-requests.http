@@ -1,0 +1,40 @@
+### variables
+//@url=http://localhost:3000
+@url=https://mighty-bastion-42357-373544063ef9.herokuapp.com
+@ubid=c4886c4a-ac4e-4c0d-bcaa-ca4208c91446
+
+### register a house 
+POST {{url}}/v1/house
+content-type: application/json
+
+{
+  "lng": 7,
+  "lat": 6,
+  "name": "anna's house"
+}
+
+### update house info
+PATCH {{url}}/v1/house/{{ubid}}
+content-type: application/json
+X-UBID: {{ubid}}
+
+{
+  "lng": 7,
+  "lat": 2,
+  "name": "andrew's house"
+}
+
+### update house residency
+POST {{url}}/v1/house/{{ubid}}/residency
+content-type: application/json
+X-UBID: {{ubid}}
+
+{
+  "birds": 10,
+  "eggs": 12
+}
+
+### get one house
+GET {{url}}/v1/house/{{ubid}}
+X-UBID: {{ubid}}
+

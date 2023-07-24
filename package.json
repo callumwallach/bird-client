@@ -1,0 +1,31 @@
+{
+  "name": "house-admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/components": "^10.2.1",
+    "@vueuse/core": "^10.2.1",
+    "axios": "^1.4.0",
+    "chart.js": "^4.3.0",
+    "chartjs-adapter-dayjs-4": "^1.0.4",
+    "dayjs": "^1.11.9",
+    "lodash": "^4.17.21",
+    "vue": "^3.3.4",
+    "vue-chart-3": "^3.1.8",
+    "vue-chartjs": "^5.2.0",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.195",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vue-tsc": "^1.8.3"
+  }
+}

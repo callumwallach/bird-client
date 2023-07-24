@@ -1,0 +1,20 @@
+### variables
+### variables
+//@url=http://localhost:3000
+@url=https://mighty-bastion-42357-373544063ef9.herokuapp.com
+@ubid=f50910c9-e501-4a08-a3d2-9e6cd81a0593
+
+### get one house
+GET {{url}}/v1/admin/{{ubid}}?active=true
+
+### get all houses
+GET {{url}}/v1/admin?active=true&limit=10&page=1
+
+### deactive house
+PATCH {{url}}/v1/admin/{{ubid}}/status
+content-type: application/json
+
+{
+  "active": true
+}
+
