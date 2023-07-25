@@ -24,7 +24,7 @@ const page: Ref<number> = ref(1);
 const fetchOneHouse = async (ubid: string) => {
   try {
     const { data }: { data: House } = await axiosInstance.get(
-      `https://${BIRDHOUSE_ADMIN_API_URL}/${ubid}?active=true`
+      `${BIRDHOUSE_ADMIN_API_URL}/${ubid}?active=true`
     );
     house.value = data;
     house.value.residencyHistory = house.value.residencyHistory.sort(

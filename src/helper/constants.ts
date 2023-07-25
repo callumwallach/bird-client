@@ -13,4 +13,5 @@ export const HOUSES_PAGE_SIZE = 4;
 export const RESIDENCY_PAGE_SIZE = 7;
 
 export const BIRDHOUSE_ADMIN_API_URL =
-  "mighty-bastion-42357-373544063ef9.herokuapp.com/v1/admin";
+  "https://mighty-bastion-42357-373544063ef9.herokuapp.com/v1/admin";
+// export const BIRDHOUSE_ADMIN_API_URL = "http://localhost:3000/v1/admin";
