@@ -16,9 +16,7 @@ const page: Ref<number> = ref(1);
 */
 const fetchHouses = async (page: number) => {
   const { data }: { data: HousesResultSet } = await axiosInstance.get(
-    `${
-      import.meta.env.VITE_BIRDHOUSE_ADMIN_API_URL
-    }?active=true&limit=${HOUSES_PAGE_SIZE}&page=${page}`
+    `?active=true&limit=${HOUSES_PAGE_SIZE}&page=${page}`
   );
   houses.value = data.data;
   total.value = data.count;
