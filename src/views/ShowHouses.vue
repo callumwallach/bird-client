@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar.vue";
 import HouseSummary from "../components/HouseSummary.vue";
 import Pagination from "../components/Pagination.vue";
 import { House, HousesResultSet } from "../helper/houses";
-import { BIRDHOUSE_ADMIN_API_URL, HOUSES_PAGE_SIZE } from "../helper/constants";
+import { HOUSES_PAGE_SIZE } from "../helper/constants";
 import axiosInstance from "../service/axiosInstance";
 
 const houses: Ref<House[]> = ref([]);
@@ -16,7 +16,9 @@ const page: Ref<number> = ref(1);
 */
 const fetchHouses = async (page: number) => {
   const { data }: { data: HousesResultSet } = await axiosInstance.get(
-    `${BIRDHOUSE_ADMIN_API_URL}?active=true&limit=${HOUSES_PAGE_SIZE}&page=${page}`
+    `${
+      import.meta.env.VITE_BIRDHOUSE_ADMIN_API_URL
+    }?active=true&limit=${HOUSES_PAGE_SIZE}&page=${page}`
   );
   houses.value = data.data;
   total.value = data.count;

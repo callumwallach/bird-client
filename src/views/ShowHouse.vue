@@ -3,10 +3,7 @@ import { ref, Ref, watch, computed } from "vue";
 import HouseDetail from "../components/HouseDetail.vue";
 import Sidebar from "../components/Sidebar.vue";
 import axiosInstance from "../service/axiosInstance";
-import {
-  BIRDHOUSE_ADMIN_API_URL,
-  RESIDENCY_PAGE_SIZE,
-} from "../helper/constants";
+import { RESIDENCY_PAGE_SIZE } from "../helper/constants";
 import { House, Residency } from "../helper/houses";
 import Pagination from "../components/Pagination.vue";
 
@@ -24,7 +21,7 @@ const page: Ref<number> = ref(1);
 const fetchOneHouse = async (ubid: string) => {
   try {
     const { data }: { data: House } = await axiosInstance.get(
-      `${BIRDHOUSE_ADMIN_API_URL}/${ubid}?active=true`
+      `${import.meta.env.VITE_BIRDHOUSE_ADMIN_API_URL}/${ubid}?active=true`
     );
     house.value = data;
     house.value.residencyHistory = house.value.residencyHistory.sort(
