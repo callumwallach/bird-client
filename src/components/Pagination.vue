@@ -72,12 +72,13 @@ const pagesAfterCurrent: ComputedRef<string[]> = computed(() =>
         <img
           v-show="!isFirstPage"
           @click="prev"
+          id="pagination-nav-prev"
           class="pagination-nav-icon"
           src="../assets/svg/left-caret-active.svg"
           alt="left caret active"
         />
         <div v-for="pageBefore in pagesBeforeCurrent">
-          <div class="pagination-other-text">
+          <div class="pagination-before-text">
             {{ pageBefore }}
           </div>
         </div>
@@ -87,7 +88,7 @@ const pagesAfterCurrent: ComputedRef<string[]> = computed(() =>
           </div>
         </div>
         <div v-for="pageAfter in pagesAfterCurrent">
-          <div class="pagination-other-text">
+          <div class="pagination-after-text">
             {{ pageAfter }}
           </div>
         </div>
@@ -100,6 +101,7 @@ const pagesAfterCurrent: ComputedRef<string[]> = computed(() =>
         <img
           v-show="!isLastPage"
           @click="next"
+          id="pagination-nav-next"
           class="pagination-nav-icon"
           src="../assets/svg/right-caret-active.svg"
           alt="right caret active"
@@ -155,7 +157,8 @@ const pagesAfterCurrent: ComputedRef<string[]> = computed(() =>
   line-height: normal;
 }
 
-.pagination-other-text {
+.pagination-before-text,
+.pagination-after-text {
   /* width: 12px; */
   width: 36px;
 
